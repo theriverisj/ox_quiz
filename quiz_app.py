@@ -87,7 +87,10 @@ else:
     question = row[question_col]
     answer = str(row[answer_col]).strip().upper()
 
-    st.write(f"## {question}")
+    st.markdown(
+    f"<p style='font-size:20px; font-weight:600; text-align:center;'>{question}</p>",
+    unsafe_allow_html=True
+)
 
     # 아직 답 안 했을 때
     if not st.session_state.answered:
@@ -118,7 +121,7 @@ else:
     else:
 
         if st.session_state.correct:
-            st.success("정답입니다! 🎉")
+            st.success("정답입니다!")
         else:
             st.error(f"오답입니다! 정답: {answer}")
 
@@ -127,5 +130,6 @@ else:
             st.session_state.index += 1
             st.session_state.answered = False
             st.session_state.correct = None
+
 
             st.rerun()
