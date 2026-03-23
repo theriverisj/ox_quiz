@@ -34,7 +34,7 @@ if not st.session_state.authenticated:
 st.title("📱 국형총 OX 퀴즈")
 
 # 엑셀 불러오기
-df = pd.read_excel("wk3_quiz_h.xlsx", header=None)
+df = pd.read_excel("wk4_quiz_h.xlsx", header=None)
 
 num_col = 0
 question_col = 1
